@@ -4,11 +4,8 @@
 # Logs
 *.log
 
-# Docker volumes
-data/
-
-# IDE files
-.idea/
+# IDE and other files
+.DS_Store
 .vscode/
 *.swp
 *.swo
