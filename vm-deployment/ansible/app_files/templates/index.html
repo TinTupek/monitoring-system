@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dummy Monitoring App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .endpoint {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .endpoint h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .metrics {
+            background-color: #e8f4f8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dummy Monitoring App</h1>
+        <p>This is a simple Flask application that exposes Prometheus metrics for monitoring demonstrations.</p>
+        
+        <div class="endpoint">
+            <h3>Available Endpoints:</h3>
+            <a href="/" class="btn">Home</a>
+            <a href="/slow" class="btn">Slow Request</a>
+            <a href="/error" class="btn">Error Request</a>
+            <a href="/metrics" class="btn metrics">Prometheus Metrics</a>
+        </div>
+        
+        <div class="endpoint">
+            <h3>Metrics Information:</h3>
+            <ul>
+                <li><strong>app_request_count</strong>: Counts the number of requests by method, endpoint, and HTTP status</li>
+                <li><strong>app_request_latency_seconds</strong>: Measures request latency by method and endpoint</li>
+                <li><strong>app_error_count</strong>: Counts errors by method, endpoint, and error type</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

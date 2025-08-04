@@ -1,0 +1,42 @@
+#cloud-config
+
+# Set hostname
+hostname: ansible-control
+
+# Update and upgrade packages
+package_update: true
+package_upgrade: true
+
+# Install necessary packages
+packages:
+  - ansible
+  - python3
+  - python3-pip
+  - openssh-server
+  - python3-jinja2
+  - python3-yaml
+  - python3-paramiko
+  - python3-cryptography
+  - sshpass
+
+# Create a user for Ansible operations
+users:
+  - name: ansible
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    lock_passwd: false
+
+chpasswd:
+  list: |
+    ansible:ansible123
+  expire: false
+
+ssh_pwauth: true
+
+runcmd:
+  - apt-get update
+  - apt-get install -y openssh-sftp-server
+  - echo "Subsystem sftp /usr/lib/openssh/sftp-server" >> /etc/ssh/sshd_config
+  - systemctl restart ssh
+

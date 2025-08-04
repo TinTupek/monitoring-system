@@ -1,0 +1,39 @@
+#cloud-config
+
+# Set hostname
+hostname: app-monitoring-vm
+
+# Update and upgrade packages
+package_update: true
+package_upgrade: true
+
+# Install necessary packages
+packages:
+  - python3
+  - python3-pip
+  - python3-venv
+  - openssh-server
+  - openssh-sftp-server
+
+# Create a user for Ansible with sudo privileges
+users:
+  - name: ansible
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    lock_passwd: false
+
+chpasswd:
+  list: |
+    ansible:ansible123
+  expire: false
+
+ssh_pwauth: true
+
+runcmd:
+  - systemctl restart ssh
+  - apt-get install -y ufw
+  - ufw allow 22/tcp
+  - ufw allow 5000/tcp
+  - ufw allow 8000/tcp
+  - ufw --force enable
