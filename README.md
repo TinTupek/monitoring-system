@@ -128,6 +128,9 @@ docker-compose up -d
 3. Error Count (`error_count`)
    - Number of errors by endpoint and status code
 
+### Screenshot
+<img width="2325" height="1585" alt="image" src="https://github.com/user-attachments/assets/3c8cedbe-69cf-4b02-96b4-04b87b9a984a" />
+
 ## Alerting
 
 - High Request Latency Alert:
