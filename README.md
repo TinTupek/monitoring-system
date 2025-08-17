@@ -1,7 +1,10 @@
 # Task: Monitoring Setup with Prometheus and Grafana
+
 The objective is to deploy a monitoring system using Prometheus and Grafana, collect metrics from a
 sample application, and visualize key data points on dashboards.
+
 ## Requirements
+
 1. Deploy Prometheus and Grafana and configure them for use in a typical SRE environment.
 2. Use or create a sample application that exposes Prometheus-compatible metrics (e.g., request count, latency, error rate).
 3. Important: Application should be running within separate VM running Linux distribution of your choice.
@@ -127,9 +130,6 @@ docker-compose up -d
    - Number of errors by endpoint and status code
 3. Error Count (`error_count`)
    - Number of errors by endpoint and status code
-
-### Screenshot
-<img width="2325" height="1585" alt="image" src="https://github.com/user-attachments/assets/3c8cedbe-69cf-4b02-96b4-04b87b9a984a" />
 
 ## Alerting
 

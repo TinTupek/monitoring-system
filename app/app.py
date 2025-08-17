@@ -47,10 +47,6 @@ def get_data():
         'timestamp': time.time()
     }
 
-@app.route('/metrics')
-def metrics():
-    return 'Prometheus metrics endpoint'
-
 if __name__ == '__main__':
     # Start Prometheus metrics server
     start_http_server(8000)
